@@ -1,0 +1,3 @@
+First, I check if the packet is an http request (GET method, port 80, has tcp layer) and also the host is infosec.
+If so, I create a new packet with its ip destination is the ip source of the packet, and the ip source is the ip destination of the packet (just like the request-er expects to get back).
+Then, the response port is of course 80 (http), dest is according to the port sent with, flags are ack and fin (terminate connection), seq number is the ack number, and the ack number is the seq number plus the payload size. Finally, the load is the RESPONSE provided in the module.

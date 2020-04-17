@@ -1,0 +1,3 @@
+get_anti_virus_pid is implemented just like handle_ls.
+payload_for_Getting_antivirus_pid is simple "pidof antivirus", it returns the process id of the program named antivirus, the output is extracted from it and that is how the pid is extracted.
+get_payload simply kills the process using the extracted pid.

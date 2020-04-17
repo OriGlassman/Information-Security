@@ -1,0 +1,4 @@
+Exploiting the /rename command!:
+I give it a valid username, otherwise it will return invalid username. Afterwards, comes a ', which results to an empty string (meaning in the python it will result to full_name = '' (could have entered here whatever name I want, it wont get changed since I put WHERE 0=1 right after, which is always false, so no change name takes affect.
+then comes the harmful code: I add ; which indicates end of command, then I start a new one, the one which will update the password of any user I want (You need to enter in the password sha1('1234') for a user to enter with 1234, because of the way it gets checked in line 116 in the server file.). After updating the user password, i put -- to put the rest of the query in comment so it won't interrupt us.
+The vulnerability here is the %s, imo it should be ? like in the other places. SQL treats the question mark differently than %s, which is a phytonic way and not sql.

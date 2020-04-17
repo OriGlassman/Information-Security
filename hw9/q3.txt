@@ -1,0 +1,9 @@
+is_packet_to_original_gateway:
+	So basically we know the mac address of the default gateway, any one trying to talk to the internet (outside) goes through the gateway, hence the packet destination mac address will be the router's mac - so I check whether the mac is the gateways mac. In the comments it is also mentioned that we shall ignore packets we send, so I've added a condition to see if the src ip is our local ip.
+
+is_stolen_packet:
+	A stolen packet will have its destination mac address as our local mac address - but that's not enough as some one might really want to send a message to us, which means the mac address is valid in that case - but the ip address in that case will also be our ip address, which is not the case if the packet is stolen. So I simply check if there is a contradition between the ip and mac address, i.e if the mac address is my mac address but the ip is NOT my ip, then it means it is stolen packet. (muhaha)
+
+create_poison:
+
+	Following arp procedure, the op is 2 as we are replying (without a request though). The source mac adress will be ours, but the ip will be the default gateway, so the one who sent the packet in the network will think the mac of the default gateway is our mac (i.e our mac belongs to the ip of the default gateway). We don't want to poison everyone on the network, so the target mac and ip is the victims mac and ip (only for him the ARP poisoning will apply as others will discard the arp reply because it won't match their mac address nor it's arp announcement one)

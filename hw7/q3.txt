@@ -1,0 +1,4 @@
+The same method as the last question, 3 global variables declared that their real value was placed after compiling. pid, address of check_if_virus in got, and an adress of an alternative.
+I got the address of check if virus in got by objdump -D binaries/antivirus -M intel --section=.plt and then seeing the value at the jmp, just like instructed in recitation 7 (almost at the end of the ppt).
+The alternative I choose was is_directory since it calls stat, and since the argument path will be corrupted (jibbrish and not a real location), stat will return -1, which means we will enter the condition and return 0, just what we need. I got the address of the function from gdb, b main, run [arg], print is_directory. everything else is the same as in q2.
+

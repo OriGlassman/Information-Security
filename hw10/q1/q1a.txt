@@ -1,0 +1,10 @@
+generate_syn_packets:
+	simply create a list of packets that its tcp flag SYN is set with the correct port and ip.
+analyze_scan:
+	So the ports get categorized as follows:
+	open port - a port that replies with syn ack, meaning an establishment of the connection.
+	closed port - responded but with a RST flag set, meaning we can't establish a connection with this port.
+	filtered port - meaning the firewall or something dropped our syn packet and we don't even get a response back.
+	So in the function I just check whether our packet was unanswerered or if it was answered what flags are set and from that categorize it.
+
+It is called stealth syn scan - firstly, syn is derived from the fact we send tcp packet with syn flag set. scan is because we search for several ports, not just one - searching for some vulnerability. It is stealth due to the fact that we dont actually establish a connection (we don't reply with a ack on the synack from the server), thus for a server administrator or someone who is vulnerable to a syn scan, it is harder to notice that he was scanned if no real connections were established.

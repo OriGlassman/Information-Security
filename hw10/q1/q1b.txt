@@ -1,0 +1,5 @@
+generate_block_command:
+	simply executing the right iptables command to drop incoming connection from given ip address.
+
+on_packet:
+	Holds a dictionary of unblocked ips, on every packet see the last arrival time, if its longer than 60, set its number of packets to 1, otherwise increase the number of packets and see if its larger than 15, if it is, remove if from the dictionary and add it to the blocked set after adding the rule to iptables. On arrival of a new ip address, add to the dictionary with current time and counter==1.

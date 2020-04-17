@@ -1,0 +1,1 @@
+By defining our own Pickled class, which implements reduce function, we can run whatever malicious code we want. By creating an instance of the class and dumping it, when it gets open, our code gets executed, which in this case is os.system and then echo hacked.

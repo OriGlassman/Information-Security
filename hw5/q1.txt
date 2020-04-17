@@ -1,0 +1,3 @@
+The vulnerability is that the buffer allocated to write data received is 1024 long, but there is no check that the user sends less than that.
+So the exploit is: send more ! (and don't hide it, the first byte will be the length, for example 1050, and then 1050 bytes to override the return address on the stack).
+I sent 1044 bytes with "0" and leading 2 "1" to mark the ra.

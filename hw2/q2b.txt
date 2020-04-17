@@ -1,0 +1,2 @@
+Since the public paramter e is equal to 3, and n is a big-big number, and we know that the credit cards are a 9 digit number, it is easy to verify that the maximum credit card number is always smaller than n, which means when applying modn to it, it stays the same, which implies it is actually under integers and not modolus.
+So simple enough, calculate the cubic root (cancelling the raise to the power of 3) of the encrypted plaintext, and get the credit card number.

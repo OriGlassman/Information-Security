@@ -1,0 +1,2 @@
+For the forging a signature to work first we must use a status of 1, otherwise the first check in verify_server_approval will return False.
+Since the status is 1, any raise to any power of it will still remain 1 (like the one happens in textbook RSA), so the signature is simply 1.

@@ -1,0 +1,3 @@
+There is a variable that is initiallized to 0xA2, and then it is being XORed with advancing-index bytes in a loop (value of first byte iterations).
+Once the loop is finished, it is checked if the second byte in the file is equal to the result of the xor we got; if it is equal, it prints "valid message" and return 1, otherwise "invalid message" and returns 0.
+So in the python script I basically do the same, initiallize the key, xor the right amount of bytes, and then check if it is equal to the second byte.

@@ -1,0 +1,2 @@
+The vulnerability is that buffer is allocated for 20 bytes, written 12 bytes, but then can be concatenated for 10 bytes, meaning 2 bytes exceeds the buffer (i.e buffer overflow). Then, by viewing from IDA, we can see that auth is the variable which resides next to buff, so the excdeeds bytes belong to auth.
+So simple enough, the exploit is change the first byte of auth to 1, and then we're in.

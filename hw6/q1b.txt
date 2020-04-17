@@ -1,0 +1,2 @@
+In order to print the address of system I used print system which returned the address of it.
+Finding /bin/sh using find 0xb7d664a0, 0xb7d87074, "/bin/sh". Filled 66 nops and then overrided the return address with the address to system(), put gibbrish (dont care in the return address from system(), and then the address to the /bin/sh).

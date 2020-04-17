@@ -1,0 +1,2 @@
+Played with the GadgetSearch to find the most appropriate way to do the job.
+Found out that there is a "mov dword ptr [edx], eax". So now what was left is to get 1 in eax, by doing xor eax, eax, and then inc eax, and then putting in edx the address of auth (found in ida) in the way we saw in class, pop edx and afterwards the address on the stack so that the address will get loaded into edx.

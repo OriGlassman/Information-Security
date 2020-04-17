@@ -1,0 +1,1 @@
+After checking that the packet we got has ip and tcp layer, I check if its syn flag is up. If it is up, I send to the correct ip from the correct port a packet with its syn+ack set, with its seq number equal the ack of the packet we got plus one.

@@ -1,0 +1,6 @@
+The encoding is straightforward, xor if byte is over the ascii value.
+At the begining of the decoder I put the start address of the encoded shellcode in eax, by putting esp in eax and subtracting 4 (to ra) and 161 (length of the shellcode) = 165.
+After getting the right value in eax, bl needs to be 0xff, so I zero ebx and dec by one, so now ebx is 0xffffffff which means bl is as well.
+Now comes the xoring part, just xor and inc the counter and check if xoring needs to take place.
+Once the decoder is finished (I wrote everything to decoder.asm), I return the assembled code of it.
+get_payload is almost the same as in q2, only that instead of nop I do inc edx, and the "nop slide" comes before the decoder and not after the shellcode.

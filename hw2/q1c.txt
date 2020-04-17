@@ -1,0 +1,2 @@
+I used a common histogram of a long text in english, and gave each character the same value. Then, I iterate over each character and see if it is in the dictionary (if it is not, it basically adds no weight) and if it is, I add to the score the value of it divided by the length of the string (in order to be normalized). 
+For section e (which also improves all the sections) I also added that the 3 most common words get value as well.

@@ -1,0 +1,4 @@
+In patch1, I simply added the jump to the big dead section.
+In patch2, at the top there is a jump to the end of the big dead section. One line under that is the entry point from patch1.
+The flow goes like this: readfile is called, then normal execution and jumping to the jmp that normally happens anyway. Now, if there is no error (EOF or such), the program branch to the big dead section and perform the code I injected there. Upon finishing, jumps to the start of readline (meaning skipping printf).
+The code in patch2 simply checks whether the current line starts with #!, if so calls system and wraps off.

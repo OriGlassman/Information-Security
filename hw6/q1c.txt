@@ -1,0 +1,9 @@
+Found address of exit by "print exit" in gdb.
+So the stack looks like this:
+
+---arg of exit, second arg of execvl---
+---first arg of execvl---
+---address of exit---
+---address of system---
+
+Also, I put the exit code as one byte (unsigned char)

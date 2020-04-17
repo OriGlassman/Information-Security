@@ -1,0 +1,1 @@
+I calculate what should be the second byte, by initiallizion of the key and then xoring the next bytes (first byte amount). After xoring, I replace the second character with a valid second character which will give a valid message. If the message is already valid, the original second byte and the byte from the xoring should be the same, invoking no real change.

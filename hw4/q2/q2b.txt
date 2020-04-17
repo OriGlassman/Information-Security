@@ -1,0 +1,4 @@
+Watching from the core in q2a, X= 0xbfff29 and Y=0x43. so the shell code needs to be total of 67 commands and then written the return address of the start of the buffer, which is X.
+Regarding the shell, as we saw in the recitation, we do the trick of saving the string (without \0) in the stack and then poping it to get the address to it, and then null terminate it by xoring same register in order to avoid \x00 in the code to make strcat work properly as we want. Afterwards, execve arguments needs to be prepared and then the system call is called.
+
+* for this section I made a new core to see where is the actual ra (so I iterated with increasing x: 'a'*x + "b") untill I saw it in the ra. I restored the original core from section q2a to be the core in the folder.

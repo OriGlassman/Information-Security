@@ -1,0 +1,1 @@
+Similarly to section a, I check if "love" is in the load of the packet, and also if its entropy is higher than 3. If true, add to the set. 

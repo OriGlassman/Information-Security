@@ -1,0 +1,1 @@
+It gets loaded by eval - so we can simply write to the file the command we want to get executed, and the run.py will execute it with the eval it does. We want hacked to get printed, so use os.system with echo hacked

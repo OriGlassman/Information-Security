@@ -1,0 +1,1 @@
+I modified  dan gittiks python file to find out the location of the return address from check_password, overwrote it with "bbbb" and then of course it generated a core dump.

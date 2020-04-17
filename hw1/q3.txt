@@ -1,0 +1,14 @@
+If ESI holds an address representing a string, in the end ECX will hold the length of that string (assuming it is null terminated \0).
+If ESI holds a random address, it just counts how many consecutive bytes there is until it encounters a byte of 0 in the place the address points to.
+
+Explanation of the code:
+
+Line 1 get the counter (ECX) to 0
+Line 2 get EDX to zero, which causes DL (the lsb byte) to be zero
+Line 3 is the condition we check everytime
+Line 4 compares the byte ESI is pointing to, compared to zeros
+Line 5 checks if the flag indicating the result is zero (meaning they were equal, hence ESI was pointing to a 0 byte)
+Line 6 increases the counter by one
+Line 7 causes the address in esi to point to the consecutive byte which was last pointed at
+Line 8 is the return to the start of the loop
+Line 9 marks the end of the program

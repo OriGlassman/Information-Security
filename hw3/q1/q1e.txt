@@ -1,0 +1,1 @@
+In case the message is valid, it returns 0 which is good. So the return value when the message is invalid needs to be changed. The return value in this case is simply affected by the instruction "mov eax, 1", so I changed it to "mov eax, 0"

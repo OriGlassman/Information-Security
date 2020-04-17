@@ -1,0 +1,6 @@
+First, I defined two global variables to be replaced after the program is created (just like hinted in the exercise). One of them plays the purpose of the pid, and the other is the adress to check_if_virus code, in order to overwrite it. I found the address to override by 2 options (made sure with the other): 1. in gdb, break main, run {arg}, print check_if_virus.
+2. objdump --dynamic-reloc binaries/antivirus | grep check_if_virus
+they both yieled the same address.
+
+in q2.c I attached to the running process, wrote a command that will inject xor eax, eax ; ret in the start of check_if_virus code with poke_text and then detached.
+in q2.py I simply replaced the correct variables value (picked 0x12345678 for one value and somewhat arbitrary value for the other(made sure there arent any occurences of it before)) and then returned the line that should be executed (aka the payload).
